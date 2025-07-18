@@ -5,5 +5,6 @@ export function getPopularMovies (){
 }
 
 export function getMovie(movieId){
-    return moviesApis.get(`movies/${movieId}`);
+    console.log(`Teste:${movieId}`);
+    return moviesApis.get(`movie/${movieId}`);
 }
