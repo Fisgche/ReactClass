@@ -1,8 +1,20 @@
+import { useEffect, useState } from "react";
+import { getPopularMovies } from "../services/movies.services";
+
 export function Movies() {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    getPopularMovies().then(({data}) =>{
+      setMovies(data.results)
+  })
+}, [])
   return (
-    <div>
-      <h1>Welcome to the Movies Page</h1>
-      <p>This is the main landing page of our application.</p>
-    </div>
+    <section>
+      <h1>Popular Movies</h1>
+      <ul>
+        {movies.map((movie)=><li>{movie.title}</li>)}
+      </ul>
+    </section>
   );
 }
