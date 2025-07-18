@@ -1,7 +1,7 @@
 import { moviesApis } from "../config/http";
 
 export function getPopularMovies (){
-    return moviesApis.get("discover/movie");
+    return moviesApis.get("movie/popular");
 }
 
 export function getMovie(movieId){
